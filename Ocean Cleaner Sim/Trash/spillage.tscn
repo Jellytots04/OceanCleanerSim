@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxb712l8kv0fs"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_272bh"]
+height = 0.05
+radius = 0.3
+
+[node name="Spillage" type="RigidBody3D"]
+
+[node name="SpillMesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="SpillCollider" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_272bh")

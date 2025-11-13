@@ -1,0 +1,164 @@
+[gd_scene load_steps=25 format=3 uid="uid://cahdl3jnst2yt"]
+
+[ext_resource type="Script" uid="uid://n0kjowjexy03" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://dqbtu4ohfqxk5" path="res://trash.tscn" id="2_lquwl"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ig7tw"]
+sky_material = SubResource("ProceduralSkyMaterial_7dm0k")
+
+[sub_resource type="Environment" id="Environment_0xm2m"]
+background_mode = 2
+sky = SubResource("Sky_ig7tw")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7dm0k"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.7735741, 0.89816856, 1, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
+size = Vector3(0.2, 1, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+albedo_color = Color(0.54901963, 0.7529412, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+size = Vector3(0.2, 1, 3)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ig7tw"]
+height = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0xm2m"]
+albedo_color = Color(0.36, 0.36, 0.36, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h2yge"]
+height = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ig7tw"]
+size = Vector3(17, 0.1, 19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
+albedo_color = Color(0.31287417, 0.85228145, 0.3142541, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
+top_radius = 0.3
+bottom_radius = 0.3
+height = 0.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_272bh"]
+height = 0.05
+radius = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_h2yge"]
+size = Vector3(2, 0.75, 0.75)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lquwl"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
+size = Vector3(2, 0.75, 0.75)
+
+[sub_resource type="Curve3D" id="Curve3D_0xm2m"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 9.367084, 0.095466614, -9.45961, 0, 0, 0, 0, 0, 0, -7.4280815, 0.14043736, -9.404815, 0, 0, 0, 0, 0, 0, -7.4065585, 0.19661757, 9.420086, 0, 0, 0, 0, 0, 0, 9.422973, 0.027573407, 9.410646),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_1bvp3")
+mob_scene = ExtResource("2_lquwl")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0xm2m")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, -1.4963508, 0)
+shadow_enabled = true
+
+[node name="Stage" type="Node3D" parent="."]
+
+[node name="FloorWater" type="StaticBody3D" parent="Stage"]
+
+[node name="Floor" type="MeshInstance3D" parent="Stage/FloorWater"]
+mesh = SubResource("PlaneMesh_7dm0k")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="FloorCollider" type="CollisionShape3D" parent="Stage/FloorWater"]
+shape = SubResource("WorldBoundaryShape3D_ig7tw")
+
+[node name="UI Wall" type="StaticBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0.5, 0)
+
+[node name="ButtonWall" type="MeshInstance3D" parent="Stage/UI Wall"]
+mesh = SubResource("BoxMesh_7dm0k")
+surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
+
+[node name="WallCollider" type="CollisionShape3D" parent="Stage/UI Wall"]
+shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="TrashBin" type="StaticBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, 2.25)
+
+[node name="BinMesh" type="MeshInstance3D" parent="Stage/TrashBin"]
+mesh = SubResource("CylinderMesh_ig7tw")
+surface_material_override/0 = SubResource("StandardMaterial3D_0xm2m")
+
+[node name="BinCollider" type="CollisionShape3D" parent="Stage/TrashBin"]
+shape = SubResource("CylinderShape3D_h2yge")
+
+[node name="SpawnFloor" type="MeshInstance3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+mesh = SubResource("BoxMesh_ig7tw")
+surface_material_override/0 = SubResource("StandardMaterial3D_h2yge")
+
+[node name="Trash" parent="Stage" instance=ExtResource("2_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.2, 0)
+
+[node name="Spillage" type="RigidBody3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8156099, 0.0924539, 0)
+
+[node name="SpillMesh" type="MeshInstance3D" parent="Stage/Spillage"]
+mesh = SubResource("CylinderMesh_lquwl")
+surface_material_override/0 = SubResource("StandardMaterial3D_7mycd")
+
+[node name="SpillCollider" type="CollisionShape3D" parent="Stage/Spillage"]
+shape = SubResource("CylinderShape3D_272bh")
+
+[node name="Sponge" parent="Stage" instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8340142, 0.15632898, -0.5871956)
+
+[node name="SpongeMesh" type="MeshInstance3D" parent="Stage/Sponge"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_h2yge")
+surface_material_override/0 = SubResource("StandardMaterial3D_lquwl")
+
+[node name="SpongeCollider" type="CollisionShape3D" parent="Stage/Sponge"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+shape = SubResource("BoxShape3D_7mycd")
+
+[node name="SpawnPath" type="Path3D" parent="."]
+curve = SubResource("Curve3D_0xm2m")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(-0.003262544, 0.0026775477, 0.9999846, -2.3282969e-10, 0.9999909, -0.0026775594, -0.99999046, -8.735934e-06, -0.003262525, 9.367084, 0.095466614, -9.45961)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
