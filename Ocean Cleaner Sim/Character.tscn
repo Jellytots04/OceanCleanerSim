@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://br4jhqp1ngkt5"]
+[gd_scene load_steps=8 format=3 uid="uid://br4jhqp1ngkt5"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_lcuhw"]
-[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="2_atbvg"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_o6gdn"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_5gddd"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_cxxw8"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="5_o6gdn"]
+[ext_resource type="PackedScene" uid="uid://clt88d5d1dje4" path="res://addons/godot-xr-tools/functions/movement_crouch.tscn" id="6_5gddd"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="6_kx406"]
 
 [node name="XROrigin3D" type="XROrigin3D"]
 
@@ -13,10 +17,22 @@ tracker = &"left_hand"
 
 [node name="LeftHand" parent="LeftHand" instance=ExtResource("1_lcuhw")]
 
-[node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("2_atbvg")]
-transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -0.1, 0, 0.4)
+[node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_o6gdn")]
+
+[node name="MovementDirect" parent="LeftHand" instance=ExtResource("3_5gddd")]
 
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"
 
 [node name="RightHand" parent="RightHand" instance=ExtResource("3_cxxw8")]
+
+[node name="FunctionPickup" parent="RightHand/RightHand" instance=ExtResource("2_o6gdn")]
+
+[node name="MovementTurn" parent="RightHand" instance=ExtResource("5_o6gdn")]
+turn_mode = 1
+
+[node name="MovementCrouch" parent="RightHand" instance=ExtResource("6_5gddd")]
+crouch_button_action = "ax_button"
+crouch_type = 1
+
+[node name="PlayerBody" parent="." instance=ExtResource("6_kx406")]
