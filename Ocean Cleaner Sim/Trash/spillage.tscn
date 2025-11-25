@@ -13,6 +13,8 @@ height = 0.05
 radius = 0.3
 
 [node name="Spillage" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 7
 
 [node name="SpillMesh" type="MeshInstance3D" parent="."]
 mesh = SubResource("CylinderMesh_lquwl")

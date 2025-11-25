@@ -70,6 +70,7 @@ trash_pile = ExtResource("2_lquwl")
 liquid_spill = ExtResource("3_h2yge")
 
 [node name="FloorWater" type="StaticBody3D" parent="Stage"]
+collision_layer = 3
 
 [node name="Floor" type="MeshInstance3D" parent="Stage/FloorWater"]
 mesh = SubResource("PlaneMesh_7dm0k")
@@ -88,6 +89,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
 
 [node name="WallCollider" type="CollisionShape3D" parent="Stage/UI Wall"]
 shape = SubResource("BoxShape3D_ig7tw")
+
+[node name="UI" parent="Stage/UI Wall" instance=ExtResource("6_7mycd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.11155796, 0.017550886, 0.99370664)
+mass = 0.001
+gravity_scale = 0.0
 
 [node name="TrashBin" type="StaticBody3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.5, 2.25)
@@ -111,10 +117,9 @@ autostart = true
 [node name="XROrigin3D" parent="." instance=ExtResource("4_1bvp3")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.3953882, 0)
 
-[node name="StaticBody3D" parent="." instance=ExtResource("6_7mycd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8.888442, 0.5175509, 0.99370664)
-
 [node name="BagStatic" parent="." instance=ExtResource("7_272bh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.514989, 0.21059155, -1.274296)
+collision_layer = 2
+collision_mask = 2
 
 [connection signal="timeout" from="Stage/SpawnTimer" to="Stage" method="_on_spawn_timer_timeout"]
