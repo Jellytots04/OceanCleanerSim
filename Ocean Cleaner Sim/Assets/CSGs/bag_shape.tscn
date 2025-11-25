@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://4a3dihrc0oqu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5goxo"]
+radius = 0.4
+height = 0.8
+
+[sub_resource type="TorusMesh" id="TorusMesh_pxk61"]
+outer_radius = 0.56
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ug5yy"]
+top_radius = 0.4
+bottom_radius = 0.3
+height = 0.5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_amltt"]
+top_radius = 0.38
+bottom_radius = 0.34
+height = 0.6
+
+[node name="BagShape" type="CSGCombiner3D"]
+
+[node name="Sphere" type="CSGMesh3D" parent="."]
+mesh = SubResource("SphereMesh_5goxo")
+
+[node name="Torus" type="CSGMesh3D" parent="."]
+transform = Transform3D(0.745, 0, 0, 0, 0.745, 0, 0, 0, 0.745, 0, 0.3, 0)
+mesh = SubResource("TorusMesh_pxk61")
+
+[node name="Cylinder" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("CylinderMesh_ug5yy")
+
+[node name="BagSubtarction" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09989391, 0)
+operation = 2
+mesh = SubResource("CylinderMesh_amltt")
