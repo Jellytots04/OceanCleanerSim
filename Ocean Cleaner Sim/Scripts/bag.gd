@@ -6,9 +6,12 @@ signal bagUpdate
 @export var bagSpace = 0
 @export var bagLimit = 10
 
+var bin
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	bin = get_node("/root/Main/Stage/TrashBin")
+	bin.connect("emptyBag", Callable(self, "clearBagContents"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -25,3 +28,7 @@ func _on_enter_bag_detector_body_entered(body: Node3D) -> void:
 func updateBag():
 	print("Signal has been emitted from bag")
 	emit_signal("bagSizeUpdate")
+
+func clearBagContents():
+	print("Bag is being emptied")
+	

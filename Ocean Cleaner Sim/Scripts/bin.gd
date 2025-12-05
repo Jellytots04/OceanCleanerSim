@@ -17,8 +17,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
 	if body == bag:
 		print("This is the bag yippee")
+		pointAdd()
 
 func pointAdd():
+	print("Add points signal")
 	emit_signal("addPoints")
 
 func clearBagItems():
