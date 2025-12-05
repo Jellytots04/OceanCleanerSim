@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=4 uid="uid://c3hlwjoe57qvy"]
+[gd_scene load_steps=6 format=4 uid="uid://c3hlwjoe57qvy"]
+
+[ext_resource type="Script" uid="uid://bmefgq4qb8n6j" path="res://Scripts/bag.gd" id="1_3djr2"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bf4fm"]
 _surfaces = [{
@@ -23,6 +25,7 @@ data = PackedVector3Array(-0.2893514, -0.080106094, -0.19333844, -0.28269967, -0
 [node name="BagStatic" type="RigidBody3D"]
 mass = 0.1
 gravity_scale = 0.1
+script = ExtResource("1_3djr2")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
@@ -35,7 +38,11 @@ shape = SubResource("SphereShape3D_bf4fm")
 
 [node name="EnterBagDetector" type="Area3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.10403898, 0)
+collision_layer = 7
+collision_mask = 196615
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="EnterBagDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085054666, 0)
 shape = SubResource("ConcavePolygonShape3D_bf4fm")
+
+[connection signal="body_entered" from="EnterBagDetector" to="." method="_on_enter_bag_detector_body_entered"]

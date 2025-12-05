@@ -9,8 +9,8 @@ var currentTrash = []
 var currentLiquids = []
 
 # Limit to how much trash can be in the water
-var trashLimit = 5
-var liquidLimit = 3
+@export var trashLimit = 5
+@export var liquidLimit = 3
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:

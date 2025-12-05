@@ -10,7 +10,7 @@ albedo_color = Color(0.4600852, 0.22919646, 9.62615e-08, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h2yge"]
 
 [node name="Trash" type="RigidBody3D"]
-collision_layer = 4
+collision_layer = 196615
 collision_mask = 196615
 freeze_mode = 1
 script = ExtResource("1_6spm4")
