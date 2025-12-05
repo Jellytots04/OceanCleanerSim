@@ -34,6 +34,8 @@ mesh = SubResource("ArrayMesh_ewx5r")
 surface_material_override/0 = SubResource("StandardMaterial3D_wnfmf")
 
 [node name="Area3D" type="Area3D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11450064, 0)
