@@ -28,7 +28,7 @@ func spawn_pickable():
 	var y = 0.1
 	var instance = trash_pile.instantiate()
 	instance.global_position = Vector3(x, y, z)
-	currentTrash.append(instance)
+	instance.add_to_group("currentTrash")
 	add_child(instance)
 
 func spawn_liquid():
@@ -39,15 +39,19 @@ func spawn_liquid():
 	var y = 0.1
 	var instance = liquid_spill.instantiate()
 	instance.global_position = Vector3(x, y, z)
-	currentLiquids.append(instance)
+	instance.add_to_group("currentLiquids")
 	add_child(instance)
 
 func _on_spawn_timer_timeout() -> void:
+	currentTrash = get_tree().get_nodes_in_group("currentTrash")
+	currentLiquids = get_tree().get_nodes_in_group("currentLiquids")
 	if trashLimit > currentTrash.size():
 		spawn_pickable()
+		print("New trash has been added")
 	else: 
 		print("Limit has been reached")
 	if liquidLimit > currentLiquids.size():
 		spawn_liquid()
+		print("New liquid has been added")
 	else:
 		print("Liquid limit reached")
