@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckpe1786lfccf"]
+[gd_scene load_steps=5 format=3 uid="uid://ckpe1786lfccf"]
 
 [ext_resource type="Texture2D" uid="uid://dkif4c5jeqtgs" path="res://Assets/InnerHealthBar.aseprite" id="1_7ecw3"]
+[ext_resource type="Script" uid="uid://b6lxkpmhbkkse" path="res://Scenes/controlloerPadScript.gd" id="1_acmo6"]
 [ext_resource type="Texture2D" uid="uid://8th81c11es5i" path="res://Assets/OuterHealthBar.aseprite" id="2_acmo6"]
 [ext_resource type="Texture2D" uid="uid://7o20o0pru5ul" path="res://Assets/HealthBarBg.aseprite" id="3_b7dtd"]
 
@@ -9,6 +10,7 @@ offset_right = 400.0
 offset_bottom = 200.0
 tab_alignment = 1
 current_tab = 0
+script = ExtResource("1_acmo6")
 
 [node name="RefreshTimer" type="Timer" parent="."]
 wait_time = 0.1
