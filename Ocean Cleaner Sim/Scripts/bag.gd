@@ -23,4 +23,5 @@ func _on_enter_bag_detector_body_entered(body: Node3D) -> void:
 		emit_signal("bagUpdate")
 
 func updateBag():
+	print("Signal has been emitted from bag")
 	emit_signal("bagSizeUpdate")

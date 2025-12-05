@@ -14,7 +14,9 @@ func _process(delta: float) -> void:
 	pass
 
 func updateBar():
-	progressBar.value = bag.limit - bag.bagspace
+	print("Bag has been emitted")
+	progressBar.value = bag.bagSpace
 
+# Place holder for updating bag size script
 func updateBagSize():
-	progressBar.max_value = bag.limit
+	progressBar.max_value = bag.bagLimit
