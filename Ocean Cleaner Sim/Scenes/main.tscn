@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cahdl3jnst2yt"]
+[gd_scene load_steps=18 format=3 uid="uid://cahdl3jnst2yt"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://ddm72khuma57w" path="res://Scripts/stage.gd" id="2_344ge"]
@@ -36,6 +36,9 @@ size = Vector3(17, 0.1, 19)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
 albedo_color = Color(0.31287417, 0.85228145, 0.3142541, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_344ge"]
+size = Vector3(0.5, 3.8, 20)
+
 [node name="Main" type="Node3D"]
 
 [node name="StartXR" parent="." instance=ExtResource("1_6bp64")]
@@ -56,6 +59,7 @@ liquid_spill = ExtResource("4_hptm8")
 collision_layer = 3
 
 [node name="Floor" type="MeshInstance3D" parent="Stage/FloorWater"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("PlaneMesh_7dm0k")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
@@ -71,12 +75,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0.75, 2.25)
 
 [node name="SpawnFloor" type="MeshInstance3D" parent="Stage"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 0.035, 0)
-visible = false
 mesh = SubResource("BoxMesh_ig7tw")
 surface_material_override/0 = SubResource("StandardMaterial3D_h2yge")
 
 [node name="SpawnTimer" type="Timer" parent="Stage"]
 autostart = true
+
+[node name="Boundary Wall" type="StaticBody3D" parent="Stage"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage/Boundary Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.060415, 1.3912354, -0.046142578)
+shape = SubResource("BoxShape3D_344ge")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Stage/Boundary Wall"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3, -10.166)
+shape = SubResource("BoxShape3D_344ge")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Stage/Boundary Wall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85083, 1.3912354, -0.046142578)
+shape = SubResource("BoxShape3D_344ge")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Stage/Boundary Wall"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3, 9.996334)
+shape = SubResource("BoxShape3D_344ge")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("6_6iyac")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.3953882, 0)
