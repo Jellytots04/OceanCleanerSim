@@ -6,12 +6,12 @@ signal bagUpdate
 @export var bagSpace = 0
 @export var bagLimit = 10
 
-var bin
+var player
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	bin = get_node("/root/Main/Stage/TrashBin")
-	bin.connect("emptyBag", Callable(self, "clearBagContents"))
+	player = get_node("/root/Main/XROrigin3D")
+	player.connect("pointsHasBeenAdded", Callable(self, "clearBagContents"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
