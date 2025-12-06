@@ -24,6 +24,7 @@ script = ExtResource("1_o6gdn")
 [node name="FunctionPickup" parent="LeftHand/LeftHand" instance=ExtResource("2_o6gdn")]
 
 [node name="MovementDirect" parent="LeftHand" instance=ExtResource("3_5gddd")]
+strafe = true
 
 [node name="RightHand" type="XRController3D" parent="."]
 tracker = &"right_hand"

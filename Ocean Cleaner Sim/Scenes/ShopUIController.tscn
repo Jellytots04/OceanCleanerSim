@@ -19,7 +19,7 @@ text = "Bag Size"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/Upgrades/BagSize"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -33,7 +33,7 @@ text = "Bag Weight"
 horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="VBoxContainer/Upgrades/BagWeight"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -47,7 +47,7 @@ text = "Template Upgrade"
 horizontal_alignment = 1
 
 [node name="Button2" type="Button" parent="VBoxContainer/Upgrades/TemplateUpgrade"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -64,7 +64,7 @@ text = "Trash Limit"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Trash Limit"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -78,7 +78,7 @@ text = "Liquid Limit"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Liquid Limit"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
@@ -92,7 +92,7 @@ text = "Money Maker"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Money Makers"]
-custom_minimum_size = Vector2(300, 75)
+custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
