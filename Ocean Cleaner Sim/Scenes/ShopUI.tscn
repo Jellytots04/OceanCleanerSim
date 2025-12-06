@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://curhrsuoblkwy"]
+
+[ext_resource type="PackedScene" uid="uid://cwi5ki6ir4t51" path="res://Scenes/UIController.tscn" id="1_l044j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_jpcid"]
+size = Vector3(4, 2.5, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l044j"]
+albedo_color = Color(0.54901963, 0.7529412, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vovli"]
+points = PackedVector3Array(2, 1.25, 0.025, 2, 1.25, -0.025, -2, 1.25, 0.025, 2, -1.25, 0.025, 2, -1.25, -0.025, -2, 1.25, -0.025, -2, -1.25, 0.025, -2, -1.25, -0.025)
+
+[node name="RigidBody3D" type="RigidBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.02689737)
+mesh = SubResource("BoxMesh_jpcid")
+surface_material_override/0 = SubResource("StandardMaterial3D_l044j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.02689737)
+shape = SubResource("ConvexPolygonShape3D_vovli")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_l044j")]
