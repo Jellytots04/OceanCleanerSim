@@ -1,9 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://8oelq25a7cj5"]
+[gd_scene load_steps=5 format=3 uid="uid://8oelq25a7cj5"]
 
 [ext_resource type="PackedScene" uid="uid://cwi5ki6ir4t51" path="res://Scenes/UIController.tscn" id="1_24ywa"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_24ywa"]
 size = Vector3(0.8, 0.5, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24ywa"]
+albedo_color = Color(0.54901963, 0.7529412, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_asjhf"]
 size = Vector3(0.8, 0.5, 0.01)
@@ -18,6 +21,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
 mesh = SubResource("BoxMesh_24ywa")
+surface_material_override/0 = SubResource("StandardMaterial3D_24ywa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
