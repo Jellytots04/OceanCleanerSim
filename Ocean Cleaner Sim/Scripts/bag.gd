@@ -31,4 +31,5 @@ func updateBag():
 
 func clearBagContents():
 	print("Bag is being emptied")
-	
+	bagSpace = 0
+	emit_signal("bagUpdate")
