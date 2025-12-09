@@ -29,7 +29,7 @@ viewport_size = Vector2(100, 100)
 alpha_scissor_threshold = 0.25
 unshaded = false
 filter = true
-scene_properties_keys = PackedStringArray()
+scene_properties_keys = PackedStringArray("controlloerPadScript.gd")
 
 [node name="Viewport" type="SubViewport" parent="."]
 disable_3d = true

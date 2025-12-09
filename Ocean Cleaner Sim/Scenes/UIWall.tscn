@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://con0fs7vgqu2"]
+[gd_scene load_steps=7 format=3 uid="uid://con0fs7vgqu2"]
 
 [ext_resource type="PackedScene" uid="uid://8oelq25a7cj5" path="res://Scenes/ControllerVision.tscn" id="1_jw6lw"]
+[ext_resource type="Script" uid="uid://0rt53ulax46l" path="res://Scenes/UI_Wall_Shop.gd" id="1_m4odu"]
 [ext_resource type="PackedScene" uid="uid://curhrsuoblkwy" path="res://Scenes/ShopUI.tscn" id="2_tymwn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
@@ -13,6 +14,7 @@ albedo_color = Color(0.54901963, 0.7529412, 1, 1)
 size = Vector3(0.2, 1.4998779, 3)
 
 [node name="UI Wall" type="StaticBody3D"]
+script = ExtResource("1_m4odu")
 
 [node name="ButtonWall" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)

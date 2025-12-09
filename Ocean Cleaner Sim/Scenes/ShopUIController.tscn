@@ -7,46 +7,46 @@ offset_bottom = 208.0
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Upgrades" type="HBoxContainer" parent="VBoxContainer"]
+[node name="PlayerUpgrades" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="BagSize" type="VBoxContainer" parent="VBoxContainer/Upgrades"]
+[node name="BagSize" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Upgrades/BagSize"]
+[node name="Label" type="Label" parent="VBoxContainer/PlayerUpgrades/BagSize"]
 layout_mode = 2
 text = "Bag Size"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/Upgrades/BagSize"]
+[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/BagSize"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="BagWeight" type="VBoxContainer" parent="VBoxContainer/Upgrades"]
+[node name="SpongeSize" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Upgrades/BagWeight"]
+[node name="Label" type="Label" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
 layout_mode = 2
-text = "Bag Weight"
+text = "Sponge Size"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="VBoxContainer/Upgrades/BagWeight"]
+[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="TemplateUpgrade" type="VBoxContainer" parent="VBoxContainer/Upgrades"]
+[node name="PlayerSpeed" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Upgrades/TemplateUpgrade"]
+[node name="Label" type="Label" parent="VBoxContainer/PlayerUpgrades/PlayerSpeed"]
 layout_mode = 2
-text = "Template Upgrade"
+text = "Speed"
 horizontal_alignment = 1
 
-[node name="Button2" type="Button" parent="VBoxContainer/Upgrades/TemplateUpgrade"]
+[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/PlayerSpeed"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
