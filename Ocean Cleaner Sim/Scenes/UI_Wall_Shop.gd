@@ -1,24 +1,65 @@
 extends StaticBody3D
 
+signal updateBagSize
+
 var viewport_scene
 var player
+var bag
+var stage
+var playerSpeed
 
-signal increaseBagSize
-signal increaseSpongeSize
-signal increasePlayerSpeed
-signal increaseTrashLimit
-signal increaseSpillLimit
-signal increasePriceOfTrash
+@onready var playerUpgrades = $Shop/ShopViewPort/Viewport/MarginContainer/VBoxContainer/PlayerUpgrades
+@onready var stageUpgrades = $Shop/ShopViewPort/Viewport/MarginContainer/VBoxContainer/StageUpgrades
+@onready var bagSizeButton: Button = playerUpgrades.get_node("BagSize/bagSizeButton")
+@onready var spongeSizeButton: Button = playerUpgrades.get_node("SpongeSize/spongeSizeButton")
+@onready var speedButton: Button = playerUpgrades.get_node("PlayerSpeed/speedButton")
+@onready var trashLimitButton: Button = stageUpgrades.get_node("trashLimit/trashLimitButton")
+@onready var liquidLimitButton: Button = stageUpgrades.get_node("liquidLimit/liquidLimitButton")
+@onready var moneyMakerButton: Button = stageUpgrades.get_node("moneyMakers/moneyMakersButton")
+
+#signal increaseBagSize      # Signal to the bag
+#signal increaseSpongeSize   # Signal to the sponge (yet to be added)
+#signal increasePlayerSpeed  # Signal to the player script
+#signal increaseTrashLimit   # Signal to stage
+#signal increaseSpillLimit   # Signal to stage
+#signal increasePriceOfTrash # Signal to stage
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player = get_node("/root/Main/XROrigin3D")
-	print("From the UI Wall Script : ", player)
+	bag = get_node("/root/Main/BagStatic")
+	stage = get_node("/root/Main/Stage")
+	playerSpeed = player.get_node("LeftHand/MovementDirect")
 	viewport_scene = $Shop/ShopViewPort/Viewport.get_child(0) # Locate the margin container holding the items
 	# print(viewport_scene)
-	
-
+	print(playerUpgrades)
+	bagSizeButton.pressed.connect(increaseBagSize)
+	spongeSizeButton.pressed.connect(increaseSpongeSize)
+	speedButton.pressed.connect(increaseSpeed)
+	trashLimitButton.pressed.connect(increaseTrashLimit)
+	liquidLimitButton.pressed.connect(increaseLiquidLimit)
+	moneyMakerButton.pressed.connect(addMoreMoney)
+	print(playerSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+func increaseBagSize():
+	emit_signal("updateBagSize")
+	bag.bagLimit += 1
+
+func increaseSpongeSize():
+	print("Sponge is being increased!!")
+	
+func increaseSpeed():
+	playerSpeed.max_speed += 0.2
+
+func increaseTrashLimit():
+	stage.trashLimit += 5
+
+func increaseLiquidLimit():
+	stage.liquidLimit += 1
+	
+func addMoreMoney():
+	print("You have spent your money")

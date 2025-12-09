@@ -18,7 +18,7 @@ layout_mode = 2
 text = "Bag Size"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/BagSize"]
+[node name="bagSizeButton" type="Button" parent="VBoxContainer/PlayerUpgrades/BagSize"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -32,7 +32,7 @@ layout_mode = 2
 text = "Sponge Size"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
+[node name="spongeSizeButton" type="Button" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -46,7 +46,7 @@ layout_mode = 2
 text = "Speed"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/PlayerUpgrades/PlayerSpeed"]
+[node name="speedButton" type="Button" parent="VBoxContainer/PlayerUpgrades/PlayerSpeed"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
@@ -55,43 +55,43 @@ size_flags_vertical = 4
 [node name="StageUpgrades" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Trash Limit" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
+[node name="trashLimit" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/Trash Limit"]
+[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/trashLimit"]
 layout_mode = 2
 text = "Trash Limit"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Trash Limit"]
+[node name="trashLimitButton" type="Button" parent="VBoxContainer/StageUpgrades/trashLimit"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Liquid Limit" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
+[node name="liquidLimit" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/Liquid Limit"]
+[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/liquidLimit"]
 layout_mode = 2
 text = "Liquid Limit"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Liquid Limit"]
+[node name="liquidLimitButton" type="Button" parent="VBoxContainer/StageUpgrades/liquidLimit"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Money Makers" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
+[node name="moneyMakers" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/Money Makers"]
+[node name="Label" type="Label" parent="VBoxContainer/StageUpgrades/moneyMakers"]
 layout_mode = 2
 text = "Money Maker"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/StageUpgrades/Money Makers"]
+[node name="moneyMakersButton" type="Button" parent="VBoxContainer/StageUpgrades/moneyMakers"]
 custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
