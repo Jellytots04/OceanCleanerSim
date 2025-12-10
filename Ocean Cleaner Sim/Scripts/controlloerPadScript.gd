@@ -16,6 +16,7 @@ func _ready() -> void:
 	player.connect("updatePointCount", Callable(self, "updatePoints"))
 	shop = get_node("/root/Main/Stage/UI Wall")
 	shop.connect("updateBagSize", Callable(self, "updateBagSize"))
+	shop.connect("updatePointCount", Callable(self, "updatePoints"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -29,6 +30,5 @@ func updateBar():
 	print("Bag has been emitted")
 	progressBar.value = bag.bagSpace
 
-# Place holder for updating bag size script
 func updateBagSize():
 	progressBar.max_value = bag.bagLimit

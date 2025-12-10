@@ -1,6 +1,7 @@
 extends StaticBody3D
 
 signal updateBagSize
+signal updatePointCount
 
 var viewport_scene
 var player
@@ -46,8 +47,9 @@ func _process(delta: float) -> void:
 	pass
 
 func increaseBagSize():
-	emit_signal("updateBagSize")
 	bag.bagLimit += 1
+	
+	emit_signal("updateBagSize")
 
 func increaseSpongeSize():
 	print("Sponge is being increased!!")
@@ -63,3 +65,9 @@ func increaseLiquidLimit():
 	
 func addMoreMoney():
 	print("You have spent your money")
+	# Make a money spent meter
+
+func removeFunds(cost):
+	player.points -= cost
+	emit_signal("updatePointCount")
+	print("Removing the users funds")
