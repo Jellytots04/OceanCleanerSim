@@ -47,7 +47,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Bag/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Points :"
+text = "Ocean Bucks :"
 
 [node name="PointsCount" type="Label" parent="Bag/VBoxContainer/HBoxContainer"]
 layout_mode = 2

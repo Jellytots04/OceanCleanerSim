@@ -47,9 +47,9 @@ func _process(delta: float) -> void:
 	pass
 
 func increaseBagSize():
-	bag.bagLimit += 1
-	
-	emit_signal("updateBagSize")
+	if player.points >= :
+		bag.bagLimit += 1
+		emit_signal("updateBagSize")
 
 func increaseSpongeSize():
 	print("Sponge is being increased!!")
