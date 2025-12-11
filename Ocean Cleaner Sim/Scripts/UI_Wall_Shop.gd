@@ -47,15 +47,23 @@ func _process(delta: float) -> void:
 	pass
 
 func increaseBagSize():
-	if player.points >= :
+	var points = player.points
+	var price = bagSizeButton.price
+	if points >= price:
+		removeFunds(price)
 		bag.bagLimit += 1
+		var new_price = ceil(price * 1.1)
+		bagSizeButton.update_price(new_price)
 		emit_signal("updateBagSize")
 
 func increaseSpongeSize():
 	print("Sponge is being increased!!")
 	
 func increaseSpeed():
-	playerSpeed.max_speed += 0.2
+	if player.points >= speedButton.price:
+		playerSpeed.max_speed += 0.2
+		var new_price = ceil(speedButton.price + 2.5)
+		speedButton.update_price(new_price)
 
 func increaseTrashLimit():
 	stage.trashLimit += 5
