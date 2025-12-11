@@ -39,7 +39,7 @@ func _ready() -> void:
 	speedButton.pressed.connect(increaseSpeed)
 	trashLimitButton.pressed.connect(increaseTrashLimit)
 	liquidLimitButton.pressed.connect(increaseLiquidLimit)
-	moneyMakerButton.pressed.connect(addMoreMoney)
+	moneyMakerButton.pressed.connect(winGameTime)
 	print(playerSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -60,22 +60,37 @@ func increaseSpongeSize():
 	print("Sponge is being increased!!")
 	
 func increaseSpeed():
-	if player.points >= speedButton.price:
+	var points = player.points
+	var price = speedButton.price
+	if points >= price:
+		removeFunds(price)
 		playerSpeed.max_speed += 0.2
-		var new_price = ceil(speedButton.price + 2.5)
+		var new_price = ceil(price + 3)
 		speedButton.update_price(new_price)
 
 func increaseTrashLimit():
-	stage.trashLimit += 5
+	var points = player.points
+	var price = trashLimitButton.price
+	if points >= price:
+		removeFunds(price)
+		stage.trashLimit += 5
+		var new_price = ceil(price * 1.1)
+		trashLimitButton.update_price(new_price)
 
 func increaseLiquidLimit():
-	stage.liquidLimit += 1
+	var points = player.points
+	var price = liquidLimitButton.price
+	if points >= price:
+		removeFunds(price)
+		stage.liquidLimit += 1
+		var new_price = ceil(price * 1.1)
+		liquidLimitButton.update_price(new_price)
 	
-func addMoreMoney():
+func winGameTime():
 	print("You have spent your money")
 	# Make a money spent meter
 
 func removeFunds(cost):
 	player.points -= cost
 	emit_signal("updatePointCount")
-	print("Removing the users funds")
+	# print("Removing the users funds")

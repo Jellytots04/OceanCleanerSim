@@ -47,11 +47,13 @@ func _on_spawn_timer_timeout() -> void:
 	currentLiquids = get_tree().get_nodes_in_group("currentLiquids")
 	if trashLimit > currentTrash.size():
 		spawn_pickable()
-		print("New trash has been added")
+		#print("New trash has been added")
 	else: 
-		print("Limit has been reached")
+		#print("Limit has been reached")
+		pass
 	if liquidLimit > currentLiquids.size():
 		spawn_liquid()
-		print("New liquid has been added")
+		#print("New liquid has been added")
 	else:
-		print("Liquid limit reached")
+		#print("Liquid limit reached")
+		pass
