@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://con0fs7vgqu2"]
 
 [ext_resource type="PackedScene" uid="uid://8oelq25a7cj5" path="res://Scenes/ControllerVision.tscn" id="1_jw6lw"]
-[ext_resource type="Script" uid="uid://0rt53ulax46l" path="res://Scenes/UI_Wall_Shop.gd" id="1_m4odu"]
+[ext_resource type="Script" uid="uid://0rt53ulax46l" path="res://Scripts/UI_Wall_Shop.gd" id="1_m4odu"]
 [ext_resource type="PackedScene" uid="uid://curhrsuoblkwy" path="res://Scenes/ShopUI.tscn" id="2_tymwn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]

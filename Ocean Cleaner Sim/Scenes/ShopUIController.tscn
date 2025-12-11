@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://jelxr3prg866"]
+[gd_scene load_steps=7 format=3 uid="uid://jelxr3prg866"]
+
+[ext_resource type="Script" uid="uid://b66kmaiglmrwq" path="res://Scripts/bagButtonPrice.gd" id="1_kiqeh"]
+[ext_resource type="Script" uid="uid://5mn2ee43781w" path="res://Scripts/spongeButtonPrice.gd" id="2_g4wvr"]
+[ext_resource type="Script" uid="uid://dxn3vmpxuoupj" path="res://Scripts/speedButtonPrice.gd" id="3_tchdl"]
+[ext_resource type="Script" uid="uid://lhyhggfs31gc" path="res://Scripts/trashButtonPrice.gd" id="4_tbbjk"]
+[ext_resource type="Script" uid="uid://bbar7aun3lov1" path="res://Scripts/liquidButtonPrice.gd" id="5_tchdl"]
+[ext_resource type="Script" uid="uid://dsm6gdt6rps8u" path="res://Scenes/winButtonPrice.gd" id="6_tbbjk"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 908.0
@@ -24,6 +31,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 text = "$ 10"
+script = ExtResource("1_kiqeh")
 
 [node name="SpongeSize" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
@@ -39,6 +47,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 text = "$ 10"
+script = ExtResource("2_g4wvr")
 
 [node name="PlayerSpeed" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
@@ -53,7 +62,8 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 10"
+text = "$ 25"
+script = ExtResource("3_tchdl")
 
 [node name="StageUpgrades" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -71,7 +81,8 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 10"
+text = "$ 50"
+script = ExtResource("4_tbbjk")
 
 [node name="liquidLimit" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
 layout_mode = 2
@@ -86,7 +97,8 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 10"
+text = "$ 75"
+script = ExtResource("5_tchdl")
 
 [node name="moneyMakers" type="VBoxContainer" parent="VBoxContainer/StageUpgrades"]
 layout_mode = 2
@@ -101,4 +113,5 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 10"
+text = "$ 9999"
+script = ExtResource("6_tbbjk")
