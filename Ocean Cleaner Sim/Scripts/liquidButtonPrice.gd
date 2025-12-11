@@ -11,5 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 func update_price(newPrice:int):
+	price = newPrice
 	self.text = "$ %d " % newPrice
 	
