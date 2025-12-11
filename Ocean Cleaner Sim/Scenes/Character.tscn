@@ -43,8 +43,10 @@ show_target = true
 turn_mode = 1
 
 [node name="MovementCrouch" parent="RightHand" instance=ExtResource("6_5gddd")]
+crouch_height = 0.6
 crouch_button_action = "ax_button"
 crouch_type = 1
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_kx406")]
 collision_mask = 1
+player_height_max = 1.0
