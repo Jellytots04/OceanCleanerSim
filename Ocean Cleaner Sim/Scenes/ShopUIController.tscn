@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://dxn3vmpxuoupj" path="res://Scripts/speedButtonPrice.gd" id="3_tchdl"]
 [ext_resource type="Script" uid="uid://lhyhggfs31gc" path="res://Scripts/trashButtonPrice.gd" id="4_tbbjk"]
 [ext_resource type="Script" uid="uid://bbar7aun3lov1" path="res://Scripts/liquidButtonPrice.gd" id="5_tchdl"]
-[ext_resource type="Script" uid="uid://dsm6gdt6rps8u" path="res://Scenes/winButtonPrice.gd" id="6_tbbjk"]
+[ext_resource type="Script" uid="uid://dsm6gdt6rps8u" path="res://Scripts/winButtonPrice.gd" id="6_tbbjk"]
 
 [node name="MarginContainer" type="MarginContainer"]
 offset_right = 908.0
