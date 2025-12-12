@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3u0uht2nfia5"]
+
+[ext_resource type="AudioStream" uid="uid://cqcv71ldmiua1" path="res://Assets/Audio/Solo Steel 2 - SpongeBob Soundtrack.mp3" id="1_yhs6x"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_yhs6x")
+autoplay = true

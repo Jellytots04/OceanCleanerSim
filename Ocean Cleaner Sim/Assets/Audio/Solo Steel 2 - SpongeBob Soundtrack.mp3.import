@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqcv71ldmiua1"
+path="res://.godot/imported/Solo Steel 2 - SpongeBob Soundtrack.mp3-64dd88687298d3b835dbcfe03609e7cf.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Solo Steel 2 - SpongeBob Soundtrack.mp3"
+dest_files=["res://.godot/imported/Solo Steel 2 - SpongeBob Soundtrack.mp3-64dd88687298d3b835dbcfe03609e7cf.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
