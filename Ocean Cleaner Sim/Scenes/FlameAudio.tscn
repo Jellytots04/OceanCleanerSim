@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ftcl5apqc7ki"]
+
+[ext_resource type="AudioStream" uid="uid://cs5s2ldyia5bf" path="res://Assets/Audio/lighting-a-fire-14421.mp3" id="1_11aju"]
+
+[node name="Fire" type="AudioStreamPlayer"]
+stream = ExtResource("1_11aju")

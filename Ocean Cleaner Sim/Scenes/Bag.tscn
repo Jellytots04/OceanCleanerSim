@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=4 uid="uid://c3hlwjoe57qvy"]
+[gd_scene load_steps=7 format=4 uid="uid://c3hlwjoe57qvy"]
 
 [ext_resource type="Script" uid="uid://bmefgq4qb8n6j" path="res://Scripts/bag.gd" id="1_3djr2"]
+[ext_resource type="PackedScene" uid="uid://b4a6osf0ysupp" path="res://Scenes/bagPlop.tscn" id="2_rubh8"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bf4fm"]
 _surfaces = [{
@@ -44,5 +45,7 @@ collision_mask = 196615
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="EnterBagDetector"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085054666, 0)
 shape = SubResource("ConcavePolygonShape3D_bf4fm")
+
+[node name="plop" parent="." instance=ExtResource("2_rubh8")]
 
 [connection signal="body_entered" from="EnterBagDetector" to="." method="_on_enter_bag_detector_body_entered"]

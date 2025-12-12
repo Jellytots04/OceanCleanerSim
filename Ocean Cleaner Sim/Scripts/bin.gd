@@ -5,6 +5,8 @@ signal emptyBag
 
 var bag
 
+@onready var fire = $Fire
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	bag = get_node("/root/Main/BagStatic")
@@ -18,6 +20,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
 	if body == bag:
 		print("This is the bag yippee")
+		fire.play()
 		pointAdd()
 
 func pointAdd():
