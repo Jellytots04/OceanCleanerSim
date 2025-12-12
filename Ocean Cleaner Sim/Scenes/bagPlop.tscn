@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4a6osf0ysupp"]
+
+[ext_resource type="AudioStream" uid="uid://bwjmaaixblu6b" path="res://Assets/Audio/light-bubble-pop-383738.mp3" id="1_gh7lq"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_gh7lq")

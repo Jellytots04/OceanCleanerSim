@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Sponge Sees", body)
 	if body.is_in_group("currentLiquids"):
+		
 		if player.health < player.healthMax-5:
 			player.health += 5
 		body.queue_free()

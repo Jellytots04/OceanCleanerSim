@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://cahdl3jnst2yt"]
+[gd_scene load_steps=20 format=3 uid="uid://cahdl3jnst2yt"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://ddm72khuma57w" path="res://Scripts/stage.gd" id="2_344ge"]
 [ext_resource type="PackedScene" uid="uid://dqbtu4ohfqxk5" path="res://Trash/trash.tscn" id="3_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://cxb712l8kv0fs" path="res://Trash/spillage.tscn" id="4_hptm8"]
 [ext_resource type="PackedScene" uid="uid://con0fs7vgqu2" path="res://Scenes/UIWall.tscn" id="5_344ge"]
+[ext_resource type="Texture2D" uid="uid://cfymdjru46qqc" path="res://Assets/Images/OceanWater.jpg" id="5_hptm8"]
 [ext_resource type="PackedScene" uid="uid://br4jhqp1ngkt5" path="res://Scenes/Character.tscn" id="6_6iyac"]
 [ext_resource type="PackedScene" uid="uid://co8jvehwkfchd" path="res://Scenes/TrashBin.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://c3hlwjoe57qvy" path="res://Scenes/Bag.tscn" id="7_fdnlq"]
@@ -27,7 +28,8 @@ glow_enabled = true
 size = Vector2(20, 20)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
-albedo_color = Color(0.7735741, 0.89816856, 1, 1)
+albedo_color = Color(0.7919991, 0.79199916, 0.7919991, 1)
+albedo_texture = ExtResource("5_hptm8")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ig7tw"]
 

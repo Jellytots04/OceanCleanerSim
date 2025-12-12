@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://do5v6u80u0p3e"]
+
+[ext_resource type="AudioStream" uid="uid://d147l0ui8t8kr" path="res://Assets/Audio/plop-333525.mp3" id="1_24ihn"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_24ihn")
