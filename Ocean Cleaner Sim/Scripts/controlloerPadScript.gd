@@ -23,6 +23,7 @@ func _ready() -> void:
 	shop = get_node("/root/Main/Stage/UI Wall")
 	shop.connect("updateBagSize", Callable(self, "updateBagSize"))
 	shop.connect("updatePointCount", Callable(self, "updatePoints"))
+	shop.connect("updateHealthMax", Callable(self, "updateSpongeSize"))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -2,6 +2,7 @@ extends StaticBody3D
 
 signal updateBagSize
 signal updatePointCount
+signal updateHealthMax
 
 var viewport_scene
 var player
@@ -57,7 +58,14 @@ func increaseBagSize():
 		emit_signal("updateBagSize")
 
 func increaseSpongeSize():
-	print("Sponge is being increased!!")
+	var points = player.points
+	var price = spongeSizeButton.price
+	if points >= price:
+		removeFunds(price)
+		player.healthMax += 50
+		var new_price = ceil(price * 1.5)
+		bagSizeButton.update_price(new_price)
+		emit_signal("updateHealthMax")
 	
 func increaseSpeed():
 	var points = player.points

@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
 layout_mode = 2
-text = "Sponge Size"
+text = "Health Upgrade"
 horizontal_alignment = 1
 
 [node name="spongeSizeButton" type="Button" parent="VBoxContainer/PlayerUpgrades/SpongeSize"]
@@ -46,8 +46,9 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 10"
+text = "$ 25"
 script = ExtResource("2_g4wvr")
+price = 25
 
 [node name="PlayerSpeed" type="VBoxContainer" parent="VBoxContainer/PlayerUpgrades"]
 layout_mode = 2
