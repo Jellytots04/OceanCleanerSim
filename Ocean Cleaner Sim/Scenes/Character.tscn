@@ -46,7 +46,7 @@ turn_mode = 1
 
 [node name="MovementCrouch" parent="RightHand" instance=ExtResource("6_5gddd")]
 crouch_height = 0.6
-crouch_button_action = "ax_button"
+crouch_button_action = "by_button"
 crouch_type = 1
 
 [node name="PlayerBody" parent="." instance=ExtResource("6_kx406")]

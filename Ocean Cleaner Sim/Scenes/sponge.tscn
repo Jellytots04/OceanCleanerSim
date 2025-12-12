@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=4 uid="uid://cukma12pd3ts2"]
+[gd_scene load_steps=6 format=4 uid="uid://cukma12pd3ts2"]
 
-[ext_resource type="Script" uid="uid://4608460glieg" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_nwnhr"]
 [ext_resource type="Script" uid="uid://cw78ccxkvybvd" path="res://Scripts/SpongeScript.gd" id="2_a57jc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d1ilt"]
@@ -35,22 +34,21 @@ size = Vector3(0.25, 0.1, 0.1)
 
 [node name="Sponge" type="RigidBody3D"]
 collision_layer = 4
-collision_mask = 196612
+collision_mask = 4
 freeze_mode = 1
-script = ExtResource("1_nwnhr")
+script = ExtResource("2_a57jc")
 
 [node name="CSGBakedMeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_nwnhr")
 
-[node name="Spongescript" type="Node" parent="."]
-script = ExtResource("2_a57jc")
-
-[node name="Area3D" type="Area3D" parent="Spongescript"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Spongescript/Area3D"]
-shape = SubResource("BoxShape3D_a57jc")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_a57jc")
 
-[connection signal="body_entered" from="Spongescript/Area3D" to="Spongescript" method="_on_area_3d_body_entered"]
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_a57jc")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
