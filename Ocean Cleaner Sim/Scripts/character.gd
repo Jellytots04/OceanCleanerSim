@@ -2,11 +2,14 @@ extends XROrigin3D
 
 signal pointsHasBeenAdded
 signal updatePointCount
-signal pointCount
+signal updateHealthBar
 
 @export var points = 0
+@export var healthMax = 250
+@export var health = 200
 
 var bin
+var sponge
 var bag
 var shop
 
@@ -27,3 +30,16 @@ func increasePointCount():
 	points += bag.bagSpace
 	emit_signal("pointsHasBeenAdded")
 	emit_signal("updatePointCount")
+
+func updateHealth():
+	emit_signal("updateHealthBar")
+
+func newSpongeIsHere():
+	var sponges = get_tree().get_nodes_in_group("sponge")
+	if sponges.size() > 0:
+		sponge = sponges.back()
+		sponge.connect("spongeUpdate", Callable(self, "updateHealth"))
+
+func _on_timer_timeout() -> void:
+	health -= 10
+	emit_signal("updateHealthBar")

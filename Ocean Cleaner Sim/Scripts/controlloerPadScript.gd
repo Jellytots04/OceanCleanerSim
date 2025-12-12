@@ -9,7 +9,6 @@ var player
 var shop
 var sponge
 var spongeSummoner
-var spongeScript
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,6 +17,7 @@ func _ready() -> void:
 	bag.connect("bagSizeUpdate", Callable(self, "updateBagSize"))
 	player = get_node("/root/Main/XROrigin3D")
 	player.connect("updatePointCount", Callable(self, "updatePoints"))
+	player.connect("updateHealthBar", Callable(self, "updateSpongeBar"))
 	spongeSummoner = player.get_node("RightHand")
 	spongeSummoner.connect("spongeSummoned", Callable(self, "newSpongeIsHere"))
 	shop = get_node("/root/Main/Stage/UI Wall")
@@ -39,14 +39,7 @@ func updateBagSize():
 	progressBar.max_value = bag.bagLimit
 
 func updateSpongeSize():
-	spongeBar.max_value = spongeScript.spongeLimit
+	spongeBar.max_value = player.healthMax
 	
 func updateSpongeBar():
-	spongeBar.value = spongeScript.spongeSpace
-
-func newSpongeIsHere():
-	var sponges = get_tree().get_nodes_in_group("sponge")
-	if sponges.size() > 0:
-		print("Hello Sponge")
-		sponge = sponges.back()
-		sponge.connect("spongeUpdate", Callable(self, "updateSpongeBar"))
+	spongeBar.value = player.health

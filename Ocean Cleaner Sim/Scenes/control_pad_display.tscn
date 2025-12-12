@@ -29,7 +29,6 @@ layout_mode = 2
 
 [node name="Scale" type="HBoxContainer" parent="Bag/VBoxContainer"]
 layout_mode = 2
-alignment = 2
 
 [node name="Label" type="Label" parent="Bag/VBoxContainer/Scale"]
 custom_minimum_size = Vector2(90, 0)
@@ -49,11 +48,12 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Bag/VBoxContainer/Sponge"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-text = "Sponge Space :"
+text = "Health :"
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Bag/VBoxContainer/Sponge"]
 layout_mode = 2
-max_value = 10.0
+max_value = 250.0
+value = 200.0
 texture_under = ExtResource("1_7ecw3")
 texture_over = ExtResource("2_acmo6")
 texture_progress = ExtResource("3_b7dtd")
