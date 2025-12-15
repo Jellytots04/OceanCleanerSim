@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cojbncj0rgn2a"]
+
+[sub_resource type="GDScript" id="GDScript_ic1r3"]
+script/source = "extends StaticBody3D
+
+var player
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	player = get_node(\"/root/Main/XROrigin3D\")
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	print(body)
+	if body == player:
+		player.ponts += 9999
+		
+"
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_slbsd"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+disable_mode = 1
+collision_layer = 0
+collision_mask = 0
+script = SubResource("GDScript_ic1r3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_slbsd")
+disabled = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_slbsd")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
