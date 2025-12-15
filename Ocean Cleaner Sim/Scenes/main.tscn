@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cahdl3jnst2yt"]
+[gd_scene load_steps=21 format=3 uid="uid://cahdl3jnst2yt"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://ddm72khuma57w" path="res://Scripts/stage.gd" id="2_344ge"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://br4jhqp1ngkt5" path="res://Scenes/Character.tscn" id="6_6iyac"]
 [ext_resource type="PackedScene" uid="uid://co8jvehwkfchd" path="res://Scenes/TrashBin.tscn" id="6_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://c3hlwjoe57qvy" path="res://Scenes/Bag.tscn" id="7_fdnlq"]
+[ext_resource type="PackedScene" uid="uid://bkde2pyy52ree" path="res://Scenes/isalnd.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://c3u0uht2nfia5" path="res://Scenes/BG_music.tscn" id="9_ynf5e"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
@@ -102,6 +103,30 @@ shape = SubResource("BoxShape3D_344ge")
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Stage/Boundary Wall"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 1.3, 9.996334)
 shape = SubResource("BoxShape3D_344ge")
+
+[node name="Islands" type="Node3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3628788)
+
+[node name="Isalnd" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.856598, 0, 34.51246)
+
+[node name="Isalnd2" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.420383, 0, 29.183922)
+
+[node name="Isalnd3" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.66223, 0, -18.71068)
+
+[node name="Isalnd4" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.45821, -1.9073486e-06, -28.793375)
+
+[node name="Isalnd5" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.06079, 0, -26.393936)
+
+[node name="Isalnd6" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.90974, 0, 17.417389)
+
+[node name="Isalnd7" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.641388, 0, -40.177757)
 
 [node name="XROrigin3D" parent="." instance=ExtResource("6_6iyac")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.3953882, 0)

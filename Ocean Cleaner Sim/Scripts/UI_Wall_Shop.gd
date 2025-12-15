@@ -97,6 +97,7 @@ func increaseLiquidLimit():
 func winGameTime():
 	print("You have spent your money")
 	# Make a money spent meter
+	
 
 func removeFunds(cost):
 	player.points -= cost
