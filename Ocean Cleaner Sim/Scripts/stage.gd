@@ -60,11 +60,13 @@ func _on_spawn_timer_timeout() -> void:
 		pass
 
 func win_animation():
+	yacht.visible = true
 	yacht.move_animation()
-	var spawn_pos = -50
 	var yachtCsg = yacht.yachtMesh
-	var origin = yachtCsg.global_origin
+	var origin: Vector3 = yachtCsg.global_origin
+	var spawn_pos = origin
+	spawn_pos.z = -50.0
 	yachtCsg.global_position.z = spawn_pos
 	var tween = yachtCsg.create_tween()
 	tween.tween_property(yachtCsg, "global_position", origin, 12).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
-	tween.finished.connect(yacht.stationed())
+	tween.finished.connect(func():yacht.stationed())

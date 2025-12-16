@@ -131,6 +131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.641388, 0, -40.177757)
 
 [node name="YachtAnimation" parent="Stage" instance=ExtResource("12_6iyac")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 0, 0)
+visible = false
 
 [node name="XROrigin3D" parent="." instance=ExtResource("6_6iyac")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.3953882, 0)
