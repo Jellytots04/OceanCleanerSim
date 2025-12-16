@@ -66,6 +66,5 @@ func win_animation():
 	var origin = yachtCsg.global_origin
 	yachtCsg.global_position.z = spawn_pos
 	var tween = yachtCsg.create_tween()
-	tween.tween_property(yachtCsg, "global_position", origin, 1.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
-	
-	
+	tween.tween_property(yachtCsg, "global_position", origin, 12).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.finished.connect(yacht.stationed())
