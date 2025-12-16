@@ -95,7 +95,13 @@ func increaseLiquidLimit():
 		liquidLimitButton.update_price(new_price)
 	
 func winGameTime():
-	print("You have spent your money")
+	# print("You have spent your money")
+	var points = player.points
+	var price = moneyMakerButton.price
+	if points >= price:
+		removeFunds(price)
+		print("You have won logic")
+		# Add logic for winning here
 	# Make a money spent meter
 	
 
