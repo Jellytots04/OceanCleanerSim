@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://e1p74862nvxg"]
+[gd_scene load_steps=7 format=3 uid="uid://e1p74862nvxg"]
 
+[ext_resource type="Script" uid="uid://f7rwxfllqyqm" path="res://Scenes/Yacht_Script.gd" id="1_11v5v"]
 [ext_resource type="PackedScene" uid="uid://hcmexbtm6r48" path="res://Scenes/yacht.tscn" id="1_jypq0"]
 
 [sub_resource type="Animation" id="Animation_11v5v"]
@@ -82,6 +83,7 @@ _data = {
 }
 
 [node name="YachtAnimation" type="Node3D"]
+script = ExtResource("1_11v5v")
 
 [node name="Yacht" parent="." instance=ExtResource("1_jypq0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
