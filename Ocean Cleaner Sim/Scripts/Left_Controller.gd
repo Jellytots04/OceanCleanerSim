@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		var bag_offset = Vector3(0, -0.2, -0.1) # Offset for the bag to the controller
 		var offset_position = global_transform.origin + global_transform.basis * bag_offset
 		var tween = bag.create_tween()
-		tween.tween_property(bag, "global_position", offset_position, 1.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+		tween.tween_property(bag, "global_position", offset_position, 1.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_IN)
 		bag.global_basis = self.global_basis
 
 # tween.tween_property(self, "scale", Vector2.ONE, 0.3)

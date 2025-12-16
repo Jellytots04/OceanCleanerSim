@@ -3,6 +3,7 @@ extends Node3D
 @export var trash_pile: PackedScene
 @export var liquid_spill: PackedScene
 @onready var spawn_floor: MeshInstance3D = $SpawnFloor
+@onready var yacht = $YachtAnimation
 
 # Will be used to hold the values
 var currentTrash = []
@@ -57,3 +58,14 @@ func _on_spawn_timer_timeout() -> void:
 	else:
 		#print("Liquid limit reached")
 		pass
+
+func win_animation():
+	yacht.move_animation()
+	var spawn_pos = -50
+	var yachtCsg = yacht.yachtMesh
+	var origin = yachtCsg.global_origin
+	yachtCsg.global_position.z = spawn_pos
+	var tween = yachtCsg.create_tween()
+	tween.tween_property(yachtCsg, "global_position", origin, 1.0).set_trans(Tween.TRANS_ELASTIC).set_ease(Tween.EASE_OUT)
+	
+	

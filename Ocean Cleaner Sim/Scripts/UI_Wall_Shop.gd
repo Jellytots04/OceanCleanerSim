@@ -101,6 +101,7 @@ func winGameTime():
 	if points >= price:
 		removeFunds(price)
 		print("You have won logic")
+		
 		# Add logic for winning here
 	# Make a money spent meter
 	
