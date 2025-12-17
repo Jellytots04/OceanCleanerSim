@@ -25,6 +25,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
 	if body == bag:
 		print("This is the bag yippee")
+		multiplierScript.currrentMultiplier += 0.3
 		fire.play()
 		pointAdd()
 

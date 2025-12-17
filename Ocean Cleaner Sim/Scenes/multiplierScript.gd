@@ -2,6 +2,8 @@ extends RigidBody3D
 
 @export var currrentMultiplier: float = 1.0
 
+@onready var timer = $Timer
+
 var UI
 var multiplierValue
 var multiplierBar
@@ -11,6 +13,8 @@ func _ready() -> void:
 	UI = $Viewport2Din3D/Viewport.get_child(0)
 	multiplierValue = UI.get_node("Multiplier/VBoxContainer/Scale/Label")
 	multiplierBar = UI.get_node("Multiplier/VBoxContainer/Scale/TextureProgressBar")
+	multiplierBar.max_value = timer.wait_time
+	print("YOU MUST WAIT THIS LONG TO MULTIPLY ",multiplierBar.max_value)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,3 +30,6 @@ func _on_timer_timeout() -> void:
 func multiplierReset():
 	currrentMultiplier = 1.0
 	updateMultiplierValue()
+
+func start_timer():
+	timer.start()
