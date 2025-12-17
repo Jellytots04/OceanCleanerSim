@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 
 func increasePointCount():
 	print("Receive points connect")
-	points += (bag.bagSpace * multiplier.currrentMultiplier)
+	points += int(ceil(bag.bagSpace * multiplier.currrentMultiplier))
 	emit_signal("pointsHasBeenAdded")
 	emit_signal("updatePointCount")
 
