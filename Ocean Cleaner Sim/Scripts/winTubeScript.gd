@@ -17,4 +17,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
 	if body is CharacterBody3D:
 		tym.visible = true
+		self.visible = false
 		print("Hello Player")

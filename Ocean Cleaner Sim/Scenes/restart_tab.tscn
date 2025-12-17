@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cow6t0vnisafx"]
+
+[node name="RestartTab" type="MarginContainer"]
+offset_right = 600.0
+offset_bottom = 280.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "You have DIED!
+
+I am a button
+click me to play again"
+scroll_active = false
+tab_size = 10
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2

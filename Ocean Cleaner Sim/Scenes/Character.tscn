@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://br4jhqp1ngkt5"]
+[gd_scene load_steps=13 format=3 uid="uid://br4jhqp1ngkt5"]
 
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="1_lcuhw"]
 [ext_resource type="Script" uid="uid://cgorp6q5454dg" path="res://Scripts/Left_Controller.gd" id="1_o6gdn"]
 [ext_resource type="Script" uid="uid://btobunn44i630" path="res://Scripts/character.gd" id="1_omicx"]
+[ext_resource type="PackedScene" uid="uid://dkpe4p8cv6io1" path="res://Scenes/restart_ui.tscn" id="2_fgiha"]
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="2_o6gdn"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="3_5gddd"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="3_cxxw8"]
@@ -16,6 +17,10 @@
 script = ExtResource("1_omicx")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="RestartUI" parent="XRCamera3D" instance=ExtResource("2_fgiha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.0061212)
+visible = false
 
 [node name="LeftHand" type="XRController3D" parent="."]
 tracker = &"left_hand"

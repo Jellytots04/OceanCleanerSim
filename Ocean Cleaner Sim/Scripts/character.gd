@@ -8,6 +8,9 @@ signal updateHealthBar
 @export var healthMax = 250
 @export var health = 200
 
+@onready var deathMessage = $XRCamera3D/RestartUI
+
+var restartButton
 var bin
 var sponge
 var bag
@@ -22,6 +25,10 @@ func _ready() -> void:
 	shop = get_node("/root/Main/Stage/UI Wall")
 	shop.connect("requestPoints", Callable(self, "returnPointCount"))
 	multiplier = get_node("/root/Main/Stage/UI Wall/Multiplier")
+	var messageViewport = $XRCamera3D/RestartUI/Viewport2Din3D/Viewport.get_child(0)
+	restartButton = messageViewport.get_child(1)
+	print("my last message to you caeser is ", deathMessage)
+	print("To restart press !!! ", restartButton)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -49,4 +56,4 @@ func _on_timer_timeout() -> void:
 		print("You may have collapsed")
 
 func deathTime():
-	print("The end is near")
+	deathMessage.visible = true
