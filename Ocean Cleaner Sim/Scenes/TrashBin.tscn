@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://co8jvehwkfchd"]
+[gd_scene load_steps=10 format=4 uid="uid://co8jvehwkfchd"]
 
 [ext_resource type="Script" uid="uid://c78saug07x6k7" path="res://Scripts/bin.gd" id="1_ewx5r"]
 [ext_resource type="PackedScene" uid="uid://ftcl5apqc7ki" path="res://Scenes/FlameAudio.tscn" id="2_wnfmf"]
@@ -24,6 +24,20 @@ albedo_color = Color(0.23031503, 0.23031491, 0.23031494, 1)
 height = 1.0
 radius = 0.45
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wnfmf"]
+inherit_velocity_ratio = 1.0
+direction = Vector3(1, 0.98, 0)
+spread = 80.0
+initial_velocity_min = 2.0
+initial_velocity_max = 5.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8kn27"]
+albedo_color = Color(1, 0.29803923, 0.050980393, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_y5yu3"]
+material = SubResource("StandardMaterial3D_8kn27")
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="TrashBin" type="StaticBody3D"]
 script = ExtResource("1_ewx5r")
 
@@ -43,5 +57,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11450064, 0)
 shape = SubResource("CylinderShape3D_cwluy")
 
 [node name="Fire" parent="." instance=ExtResource("2_wnfmf")]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43198904, 0)
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+process_material = SubResource("ParticleProcessMaterial_wnfmf")
+draw_passes = 2
+draw_pass_1 = SubResource("PrismMesh_y5yu3")
+draw_pass_2 = null
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

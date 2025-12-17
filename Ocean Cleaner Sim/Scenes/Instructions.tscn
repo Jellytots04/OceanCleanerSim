@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cg22gfq1rac4l"]
+[gd_scene load_steps=0 format=3 uid="uid://cg22gfq1rac4l"]
 
 [node name="Instructions" type="MarginContainer"]
 offset_right = 600.0

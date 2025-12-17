@@ -4,7 +4,7 @@ signal pointsHasBeenAdded
 signal updatePointCount
 signal updateHealthBar
 
-@export var points = 0
+@export var points = 5000
 @export var healthMax = 250
 @export var health = 250
 

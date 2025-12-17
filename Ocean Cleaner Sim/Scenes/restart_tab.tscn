@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cow6t0vnisafx"]
+[gd_scene load_steps=0 format=3 uid="uid://cow6t0vnisafx"]
 
 [node name="RestartTab" type="MarginContainer"]
 offset_right = 600.0

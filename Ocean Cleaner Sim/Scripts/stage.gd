@@ -5,6 +5,7 @@ extends Node3D
 @onready var spawn_floor: MeshInstance3D = $SpawnFloor
 @onready var yacht = $YachtAnimation
 @onready var winTube = $winWalker
+@onready var particles = $GPUParticles3D
 
 # Will be used to hold the values
 var currentTrash = []
@@ -32,6 +33,8 @@ func spawn_pickable():
 	instance.global_position = Vector3(x, y, z)
 	instance.add_to_group("currentTrash")
 	add_child(instance)
+	particles.global_position = Vector3(x, y, z)
+	particles.emitting = true
 
 func spawn_liquid():
 	var aabb = spawn_floor.mesh.get_aabb()

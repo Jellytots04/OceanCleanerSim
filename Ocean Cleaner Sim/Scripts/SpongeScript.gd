@@ -5,6 +5,7 @@ signal spongeUpdate
 var player
 var rightController
 @onready var plop = $Plop
+@onready var particles = $GPUParticles3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,6 +20,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	print("Sponge Sees", body)
 	if body.is_in_group("currentLiquids"):
 		plop.play()
+		particles.emitting = true
 		if player.health < player.healthMax-5:
 			player.health += 5
 		body.queue_free()

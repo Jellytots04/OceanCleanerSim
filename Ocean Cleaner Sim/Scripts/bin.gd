@@ -8,6 +8,8 @@ var multiplierScript
 var multiplierV
 var multiplierContent
 
+
+@onready var particles = $GPUParticles3D
 @onready var fire = $Fire
 
 # Called when the node enters the scene tree for the first time.
@@ -30,6 +32,9 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		multiplierScript.start_timer()
 		fire.play()
 		pointAdd()
+		# var particleFlame = particles.instantiate()
+		# get_parent().add_child(particleFlame)
+		particles.emitting = true
 
 func pointAdd():
 	emit_signal("addPoints")

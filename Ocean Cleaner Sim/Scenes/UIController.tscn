@@ -9,7 +9,7 @@ size = Vector2(4, 2.5)
 [sub_resource type="ViewportTexture" id="ViewportTexture_pdydw"]
 viewport_path = NodePath("Viewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdydw"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eo5s0"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
@@ -30,7 +30,7 @@ size = Vector2i(400, 200)
 
 [node name="Screen" parent="." index="1"]
 mesh = SubResource("QuadMesh_tm77h")
-surface_material_override/0 = SubResource("StandardMaterial3D_pdydw")
+surface_material_override/0 = SubResource("StandardMaterial3D_eo5s0")
 
 [node name="StaticBody3D" parent="." index="2"]
 viewport_size = Vector2(400, 200)
