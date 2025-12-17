@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://con0fs7vgqu2"]
+[gd_scene load_steps=8 format=3 uid="uid://con0fs7vgqu2"]
 
 [ext_resource type="PackedScene" uid="uid://8oelq25a7cj5" path="res://Scenes/ControllerVision.tscn" id="1_jw6lw"]
 [ext_resource type="Script" uid="uid://0rt53ulax46l" path="res://Scripts/UI_Wall_Shop.gd" id="1_m4odu"]
 [ext_resource type="PackedScene" uid="uid://curhrsuoblkwy" path="res://Scenes/ShopUI.tscn" id="2_tymwn"]
+[ext_resource type="PackedScene" uid="uid://b2r7ga4hum6jb" path="res://Scenes/MultiplierUIComponent.tscn" id="4_s6xmt"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7dm0k"]
 size = Vector3(0.2, 1.5, 3)
@@ -34,3 +35,6 @@ gravity_scale = 0.0
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.10968709, 0.23655593, -0.47314417)
 mass = 0.001
 gravity_scale = 0.0
+
+[node name="Multiplier" parent="." instance=ExtResource("4_s6xmt")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1019606, 0.59345955, 0.9974878)

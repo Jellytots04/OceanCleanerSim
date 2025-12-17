@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2r7ga4hum6jb"]
+
+[ext_resource type="PackedScene" uid="uid://cwi5ki6ir4t51" path="res://Scenes/UIController.tscn" id="1_w2su4"]
+[ext_resource type="PackedScene" uid="uid://negfojlajtr0" path="res://Scenes/MultiplierContent.tscn" id="2_w4tdf"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_24ywa"]
+size = Vector3(0.8, 0.5, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24ywa"]
+albedo_color = Color(0.54901963, 0.7529412, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_asjhf"]
+size = Vector3(0.8, 0.5, 0.01)
+
+[node name="RigidBody" type="RigidBody3D"]
+collision_layer = 5242882
+collision_mask = 5242882
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_w2su4")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+scene = ExtResource("2_w4tdf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+mesh = SubResource("BoxMesh_24ywa")
+surface_material_override/0 = SubResource("StandardMaterial3D_24ywa")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+shape = SubResource("BoxShape3D_asjhf")
