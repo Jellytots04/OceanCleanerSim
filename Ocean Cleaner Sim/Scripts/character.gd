@@ -41,5 +41,5 @@ func newSpongeIsHere():
 		sponge.connect("spongeUpdate", Callable(self, "updateHealth"))
 
 func _on_timer_timeout() -> void:
-	health -= 10
+	health -= 5
 	emit_signal("updateHealthBar")
