@@ -14,14 +14,16 @@ func _ready() -> void:
 	multiplierValue = UI.get_node("Multiplier/VBoxContainer/Scale/Label")
 	multiplierBar = UI.get_node("Multiplier/VBoxContainer/Scale/TextureProgressBar")
 	multiplierBar.max_value = timer.wait_time
-	print("YOU MUST WAIT THIS LONG TO MULTIPLY ",multiplierBar.max_value)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if not timer.is_stopped():
+		multiplierBar.value = timer.time_left
+	else:
+		multiplierBar.value = 0
 
 func updateMultiplierValue():
-	multiplierValue.text = "%fx" % currrentMultiplier
+	multiplierValue.text = "%0.2fx" % currrentMultiplier
 
 # Reset the multiplier in when run out
 func _on_timer_timeout() -> void:

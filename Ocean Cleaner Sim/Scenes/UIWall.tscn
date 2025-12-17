@@ -38,3 +38,5 @@ gravity_scale = 0.0
 
 [node name="Multiplier" parent="." instance=ExtResource("4_s6xmt")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.1019606, 0.59345955, 0.9974878)
+mass = 0.001
+gravity_scale = 0.0

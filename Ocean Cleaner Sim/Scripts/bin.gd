@@ -23,9 +23,11 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	print(body)
-	if body == bag:
+	if body == bag and bag.bagSpace > 0:
 		print("This is the bag yippee")
 		multiplierScript.currrentMultiplier += 0.3
+		multiplierScript.updateMultiplierValue()
+		multiplierScript.start_timer()
 		fire.play()
 		pointAdd()
 

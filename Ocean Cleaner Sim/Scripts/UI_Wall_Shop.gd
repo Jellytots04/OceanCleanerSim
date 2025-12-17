@@ -103,7 +103,6 @@ func winGameTime():
 		print("You have won logic")
 		stage.win_animation()
 		# Add logic for winning here
-	# Make a money spent meter
 	
 
 func removeFunds(cost):

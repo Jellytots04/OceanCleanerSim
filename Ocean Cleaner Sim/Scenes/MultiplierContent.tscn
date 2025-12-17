@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://negfojlajtr0"]
+[gd_scene load_steps=4 format=3 uid="uid://negfojlajtr0"]
 
+[ext_resource type="Texture2D" uid="uid://8th81c11es5i" path="res://Assets/OuterHealthBar.aseprite" id="2_7vd85"]
 [ext_resource type="Texture2D" uid="uid://dkif4c5jeqtgs" path="res://Assets/InnerHealthBar.aseprite" id="2_fvfru"]
 [ext_resource type="Texture2D" uid="uid://7o20o0pru5ul" path="res://Assets/HealthBarBg.aseprite" id="3_p6x0h"]
 
@@ -32,4 +33,5 @@ horizontal_alignment = 1
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Multiplier/VBoxContainer/Scale"]
 layout_mode = 2
 texture_under = ExtResource("2_fvfru")
+texture_over = ExtResource("2_7vd85")
 texture_progress = ExtResource("3_p6x0h")

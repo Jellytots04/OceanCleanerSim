@@ -114,5 +114,5 @@ custom_minimum_size = Vector2(250, 75)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
-text = "$ 9999"
+text = "$ 5000"
 script = ExtResource("6_tbbjk")

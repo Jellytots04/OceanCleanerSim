@@ -45,3 +45,8 @@ func newSpongeIsHere():
 func _on_timer_timeout() -> void:
 	health -= 5
 	emit_signal("updateHealthBar")
+	if health <= 0:
+		print("You may have collapsed")
+
+func deathTime():
+	print("The end is near")
