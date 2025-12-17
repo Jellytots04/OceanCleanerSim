@@ -27,8 +27,9 @@ func _ready() -> void:
 	multiplier = get_node("/root/Main/Stage/UI Wall/Multiplier")
 	var messageViewport = $XRCamera3D/RestartUI/Viewport2Din3D/Viewport.get_child(0)
 	restartButton = messageViewport.get_child(1)
-	print("my last message to you caeser is ", deathMessage)
-	print("To restart press !!! ", restartButton)
+	restartButton.pressed.connect(restartScene)
+	#print("my last message to you caeser is ", deathMessage)
+	#print("To restart press !!! ", restartButton)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -51,9 +52,14 @@ func newSpongeIsHere():
 
 func _on_timer_timeout() -> void:
 	health -= 5
-	emit_signal("updateHealthBar")
 	if health <= 0:
 		print("You may have collapsed")
+		deathTime()
+	emit_signal("updateHealthBar")
+
 
 func deathTime():
 	deathMessage.visible = true
+
+func restartScene():
+	get_tree().reload_current_scene()
