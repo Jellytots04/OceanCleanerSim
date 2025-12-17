@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm1yfec6p612v"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_l3uef"]
+[ext_resource type="PackedScene" uid="uid://wx6d0nq68dhn" path="res://Scenes/ThankYouMessage.tscn" id="2_gun4g"]
+
+[node name="ThankYouMessage" type="Node3D"]
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_l3uef")]
+screen_size = Vector2(4.86, 2.5)
+scene = ExtResource("2_gun4g")
+viewport_size = Vector2(600, 280)
+scene_properties_keys = PackedStringArray()
