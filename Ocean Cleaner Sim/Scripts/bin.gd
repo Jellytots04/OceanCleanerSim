@@ -29,7 +29,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		pointAdd()
 
 func pointAdd():
-	print("Add points signal")
 	emit_signal("addPoints")
 
 func clearBagItems():
