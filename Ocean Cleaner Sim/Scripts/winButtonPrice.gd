@@ -1,5 +1,7 @@
+# Script for holding the price of the win condition button
 extends Button
 
+# Set the price and have it be exported to be used by other scripts
 @export var price: int = 5000
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

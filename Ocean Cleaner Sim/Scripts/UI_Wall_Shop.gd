@@ -1,15 +1,19 @@
+# Script for the UI Shop
 extends StaticBody3D
 
+# Signals to go out
 signal updateBagSize
 signal updatePointCount
 signal updateHealthMax
 
+# Global variables
 var viewport_scene
 var player
 var bag
 var stage
 var playerSpeed
 
+# Load the variables for all the UI shop buttons
 @onready var playerUpgrades = $Shop/ShopViewPort/Viewport/MarginContainer/VBoxContainer/PlayerUpgrades
 @onready var stageUpgrades = $Shop/ShopViewPort/Viewport/MarginContainer/VBoxContainer/StageUpgrades
 @onready var bagSizeButton: Button = playerUpgrades.get_node("BagSize/bagSizeButton")
@@ -28,35 +32,44 @@ var playerSpeed
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Set the variables to their nodes.
 	player = get_node("/root/Main/XROrigin3D")
 	bag = get_node("/root/Main/BagStatic")
 	stage = get_node("/root/Main/Stage")
 	playerSpeed = player.get_node("LeftHand/MovementDirect")
 	viewport_scene = $Shop/ShopViewPort/Viewport.get_child(0) # Locate the margin container holding the items
 	# print(viewport_scene)
-	print(playerUpgrades)
+	#print(playerUpgrades)
+	# Connect the buttons pressed to a function
 	bagSizeButton.pressed.connect(increaseBagSize)
 	spongeSizeButton.pressed.connect(increaseSpongeSize)
 	speedButton.pressed.connect(increaseSpeed)
 	trashLimitButton.pressed.connect(increaseTrashLimit)
 	liquidLimitButton.pressed.connect(increaseLiquidLimit)
 	moneyMakerButton.pressed.connect(winGameTime)
-	print(playerSpeed)
+	# print(playerSpeed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
+# Increases the points and bag size.
 func increaseBagSize():
 	var points = player.points
 	var price = bagSizeButton.price
+	# Ensure player has enough points
 	if points >= price:
+		# Removes funds
 		removeFunds(price)
 		bag.bagLimit += 1
+		# Sets the new price
 		var new_price = ceil(price * 1.1)
+		# Uses the update price function
 		bagSizeButton.update_price(new_price)
+		# Emit the signal
 		emit_signal("updateBagSize")
 
+# Increases player health.
 func increaseSpongeSize():
 	var points = player.points
 	var price = spongeSizeButton.price
@@ -66,7 +79,8 @@ func increaseSpongeSize():
 		var new_price = ceil(price * 1.5)
 		bagSizeButton.update_price(new_price)
 		emit_signal("updateHealthMax")
-	
+
+# Increase players speed
 func increaseSpeed():
 	var points = player.points
 	var price = speedButton.price
@@ -76,6 +90,7 @@ func increaseSpeed():
 		var new_price = ceil(price + 3)
 		speedButton.update_price(new_price)
 
+# Increase stages trash limit
 func increaseTrashLimit():
 	var points = player.points
 	var price = trashLimitButton.price
@@ -85,6 +100,7 @@ func increaseTrashLimit():
 		var new_price = ceil(price * 1.1)
 		trashLimitButton.update_price(new_price)
 
+# Increase stages liquid limit
 func increaseLiquidLimit():
 	var points = player.points
 	var price = liquidLimitButton.price
@@ -93,7 +109,8 @@ func increaseLiquidLimit():
 		stage.liquidLimit += 1
 		var new_price = ceil(price * 1.1)
 		liquidLimitButton.update_price(new_price)
-	
+
+# Start the wingame cutscene.
 func winGameTime():
 	# print("You have spent your money")
 	var points = player.points
@@ -103,8 +120,8 @@ func winGameTime():
 		print("You have won logic")
 		stage.win_animation()
 		# Add logic for winning here
-	
 
+# Function to remove funds from the players point count.
 func removeFunds(cost):
 	player.points -= cost
 	emit_signal("updatePointCount")

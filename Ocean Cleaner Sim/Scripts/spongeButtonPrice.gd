@@ -1,5 +1,7 @@
+# Script for holding the price of the health button upgrade in the shop
 extends Button
 
+# Set the price and have it be exported to be used by other scripts
 @export var price: int = 10
 
 # Called when the node enters the scene tree for the first time.
@@ -10,6 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+# Update the price.
 func update_price(newPrice:int):
 	price = newPrice
 	self.text = "$ %d " % newPrice
