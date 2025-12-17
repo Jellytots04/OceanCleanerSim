@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cahdl3jnst2yt"]
+[gd_scene load_steps=25 format=3 uid="uid://cahdl3jnst2yt"]
 
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="1_6bp64"]
 [ext_resource type="Script" uid="uid://ddm72khuma57w" path="res://Scripts/stage.gd" id="2_344ge"]
@@ -12,7 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bkde2pyy52ree" path="res://Scenes/isalnd.tscn" id="8_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://c3u0uht2nfia5" path="res://Scenes/BG_music.tscn" id="9_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://dm1yfec6p612v" path="res://Scenes/ThankYouMessageViewport.tscn" id="11_jkdf5"]
+[ext_resource type="ArrayMesh" uid="uid://261a451hncnr" path="res://Assets/CSGs/model.obj" id="11_wsu2k"]
 [ext_resource type="PackedScene" uid="uid://e1p74862nvxg" path="res://Scenes/yacht_animation.tscn" id="12_6iyac"]
+[ext_resource type="PackedScene" uid="uid://cfjvnnl7t3srr" path="res://Scenes/instructions_guide.tscn" id="12_wsu2k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7dm0k"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -133,6 +135,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.90974, 0, 17.417389)
 [node name="Isalnd7" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.641388, 0, -40.177757)
 
+[node name="Isalnd8" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -56.132202, 0.05573368, 50.42875)
+
+[node name="Isalnd9" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -50.279892, -0.43053484, -48.748146)
+
+[node name="Isalnd10" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -44.54589, -0.43053484, -50.800117)
+
+[node name="Isalnd11" parent="Stage/Islands" instance=ExtResource("8_d1ilt")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -49.43805, -0.43053484, -53.93711)
+
 [node name="YachtAnimation" parent="Stage" instance=ExtResource("12_6iyac")]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, 12, 0, 0)
 visible = false
@@ -140,6 +154,96 @@ visible = false
 [node name="ThankYouMessage" parent="Stage" instance=ExtResource("11_jkdf5")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.935566, 1.7445247, 0)
 visible = false
+
+[node name="Rocks" type="Node3D" parent="Stage"]
+
+[node name="Model" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.20749, 0.4291185, 25.022503)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model2" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.774267, 0.4291185, 25.613445)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model3" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.457796, 0.4291185, 24.857077)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model4" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.119959, 0.7001798, 27.542645)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model5" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.734879, 0.4291185, -20.576094)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model6" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.568317, 0.4291185, -19.709309)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model7" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.804653, 0.4291185, -20.28059)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model8" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.225845, 0.4291185, -39.275845)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model9" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.70362, 0.4291185, -38.39421)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model10" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.28862, 0.4291185, -39.442062)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model11" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 48.822697, 3.717564, 48.983967)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model12" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 47.28088, 0.4291185, -48.55868)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model13" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 47.710125, 0.4291185, -47.652325)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model14" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 48.674423, 0.4291185, -47.432083)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model15" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 49.605343, 0.429119, -47.652596)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model16" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 47.18987, 0.4291185, -49.574917)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Model17" type="MeshInstance3D" parent="Stage/Rocks"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 49.71934, 1.8275199, -50.0578)
+mesh = ExtResource("11_wsu2k")
+skeleton = NodePath("../../..")
+
+[node name="Instructions Guide" parent="Stage" instance=ExtResource("12_wsu2k")]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, -8.905649, 0.89897454, -2.322403)
 
 [node name="XROrigin3D" parent="." instance=ExtResource("6_6iyac")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.3953882, 0)
