@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cym343k55xb10"]
+
+[node name="Gameplay instructions" type="MarginContainer"]
+offset_right = 600.0
+offset_bottom = 480.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 30
+text = "You're one purpose is to clean up the ocean.
+Use the bag, pick up the trash and burn it at the furnace.
+
+You can use the oil to keep yourself alive.
+If you don't we'll just replace you.
+
+YOU WILL CLEAN OUR OCEANS.
+
+Sincerly, The overlord"
+scroll_active = false
+tab_size = 10
+horizontal_alignment = 1

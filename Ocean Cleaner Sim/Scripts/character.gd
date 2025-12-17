@@ -6,7 +6,7 @@ signal updateHealthBar
 
 @export var points = 0
 @export var healthMax = 250
-@export var health = 200
+@export var health = 250
 
 @onready var deathMessage = $XRCamera3D/RestartUI
 

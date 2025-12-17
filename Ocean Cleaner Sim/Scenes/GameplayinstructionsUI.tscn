@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8okvsgjtrmfe"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_ymddm"]
+[ext_resource type="PackedScene" uid="uid://cym343k55xb10" path="res://Scenes/gameplay_instructions.tscn" id="2_0ryen"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f6xap"]
+albedo_color = Color(0.54901963, 0.7529412, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bhen4"]
+material = SubResource("StandardMaterial3D_f6xap")
+size = Vector3(5, 6.5, 0.1)
+
+[node name="Gameplay instructions" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06645501)
+mesh = SubResource("BoxMesh_bhen4")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("1_ymddm")]
+screen_size = Vector2(5, 6)
+scene = ExtResource("2_0ryen")
+viewport_size = Vector2(600, 480)
+scene_properties_keys = PackedStringArray()

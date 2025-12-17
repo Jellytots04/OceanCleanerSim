@@ -53,7 +53,7 @@ text = "Health :"
 [node name="TextureProgressBar" type="TextureProgressBar" parent="Bag/VBoxContainer/Sponge"]
 layout_mode = 2
 max_value = 250.0
-value = 200.0
+value = 250.0
 texture_under = ExtResource("1_7ecw3")
 texture_over = ExtResource("2_acmo6")
 texture_progress = ExtResource("3_b7dtd")
