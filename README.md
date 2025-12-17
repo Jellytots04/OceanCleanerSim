@@ -69,3 +69,56 @@ The blue wall beside it is the upgrades wall, i.e. the wall where the user can u
 
 In the image above this shows the floor layout as well as the green square where trash and liquids (puddles) will randomly spawn, underneath the blue is the main floor of the world, this will be what the player is standing on at all times.
 There will be some sort of png background to show the sky and the general skybox.
+
+# Documentation 
+Ocean Cleaner Sim is an SDG inspired game targeting the Clean water and sanitation as well as the Life below water SDGs.
+This game has the user playing as a self sustaining robot, in a secured environment perventing them to leave, they are requried to clean up the trash left by humans, and use any left over oil spills to keep themselves going or they will be REPLACED immediately.
+
+With a bag you collect trash bags from the water and bring them to the furnace to be used as fuel for coorporations, with a sponge you will allow yourself to soak up as much oil as you can so you do not perish away, and lastly use the upgrades board to allow yourself to clean up the trash much quicker.
+
+## Reflective Summary
+
+During this project I had started with little to no experience with XR or VR coding in Godot, so throughout the process I have developed different skills and techniques that I can use in Godot and for other game engines in the future.
+I have developed an understanding of concepts like Signals, Transforms, Timers and Tweens, and have incorporated these into the project itself.
+
+The majority of the "backend" logic of the Bag, TrashBin / Furnace and ShopUI is done purely with signals, as most of the nodes have similar properties and usage a signal was useful for going to and through multiple nodes when a process has happened.
+
+For transforms this was used in rotating items specifically the bag and the sponge, when summoned the script summons or moves the objects in based off the users hands transformations, rotations and location. 
+
+The timers are built into the UI for the health-bar the player must collect the oil spills in the ocean to stay alive, every few seconds a timer will be timed out in the player script which will damage the player automatically.
+
+Tweens are used heavily in the animations and the movement between objects in this project, for the final cutescene with the yacht a Tween.Ease-in-Out was used for bringing the yacht into the scene and to its final destination.
+A tween is also constantly used when the player summons the bag with their left grip.
+
+These different skills and techniques provided very helpful for getting this project to the finish line especially for most of the technical components like back end shop and points system, or the upgrades shop UI.
+But I have also developed styling, sculpting and designing skills with the usage of CSGs, a few of the objects in the game are meshs and textures from (https://poly.pizza/), meshes like the Trash bag, Palm Trees, Rocks and the Yacht are from Poly Pizza, the rest of the assets I made with my knowledge on CSGs and Meshes.
+
+The sound effects were from a sound effect cite, (https://pixabay.com/), and the song used is Solo Steel 2 from the spongebob soundtrack (https://www.youtube.com/watch?v=B1wchZb87cM)
+
+## Main Features
+- Pick up objects.
+- Pointable UI.
+- Reactive UI.
+- Spatial Audio.
+- Health System.
+- Healing.
+- Currency.
+- Win and Lose conditions.
+- Animations.
+- Signals.
+- Particles.
+- Incentive.
+
+## Basic Game flow
+- User reads instructions.
+- User uses the bag to pick up trash.
+- Multiplier to increase currency gained by user.
+- User uses sponge to heal health.
+- User purchases upgrades.
+- User collects enough trash to buy game end condition.
+- User summons the Yacht cutscene.
+- Enter the game end pod.
+
+# Video Demonstration
+
+[![YouTube](http://img.youtube.com/vi/rQ8pIHz29eA/maxresdefault.jpg)](https://youtu.be/rQ8pIHz29eA)
