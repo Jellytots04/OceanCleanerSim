@@ -11,14 +11,13 @@ func _ready() -> void:
 	UI = $Viewport2Din3D/Viewport.get_child(0)
 	multiplierValue = UI.get_node("Multiplier/VBoxContainer/Scale/Label")
 	multiplierBar = UI.get_node("Multiplier/VBoxContainer/Scale/TextureProgressBar")
-	print("Lets see the two of these together ", multiplierValue, "AND NOW! ", multiplierBar)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func updateMultiplier():
-	pass
+func updateMultiplierValue():
+	multiplierValue.text = "%fx" % currrentMultiplier
 
 # Reset the multiplier in when run out
 func _on_timer_timeout() -> void:
@@ -26,3 +25,4 @@ func _on_timer_timeout() -> void:
 
 func multiplierReset():
 	currrentMultiplier = 1.0
+	updateMultiplierValue()
