@@ -4,6 +4,7 @@ extends Node3D
 @export var liquid_spill: PackedScene
 @onready var spawn_floor: MeshInstance3D = $SpawnFloor
 @onready var yacht = $YachtAnimation
+@onready var winTube = $winWalker
 
 # Will be used to hold the values
 var currentTrash = []
@@ -60,6 +61,7 @@ func _on_spawn_timer_timeout() -> void:
 		pass
 
 func win_animation():
+	yacht.horn.play()
 	yacht.visible = true
 	yacht.move_animation()
 	# var yachtCsg = yacht.yachtMesh
@@ -72,4 +74,8 @@ func win_animation():
 	print(yacht.global_position.z)
 	var tween = yacht.create_tween()
 	tween.tween_property(yacht, "global_position", origin, 12).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
-	tween.finished.connect(func():yacht.stationed())
+	tween.finished.connect(func():stationed())
+
+func stationed():
+	yacht.stationed()
+	winTube.visible = true

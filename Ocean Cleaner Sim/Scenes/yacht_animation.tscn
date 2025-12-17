@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://e1p74862nvxg"]
+[gd_scene load_steps=8 format=3 uid="uid://e1p74862nvxg"]
 
 [ext_resource type="Script" uid="uid://f7rwxfllqyqm" path="res://Scenes/Yacht_Script.gd" id="1_11v5v"]
 [ext_resource type="PackedScene" uid="uid://hcmexbtm6r48" path="res://Scenes/yacht.tscn" id="1_jypq0"]
+[ext_resource type="PackedScene" uid="uid://dcvq5s2yhhkp2" path="res://Scenes/fogHornAudio.tscn" id="3_4drgg"]
 
 [sub_resource type="Animation" id="Animation_11v5v"]
 length = 0.001
@@ -62,6 +63,7 @@ tracks/1/keys = {
 [sub_resource type="Animation" id="Animation_4drgg"]
 resource_name = "bobstationed"
 length = 4.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -92,3 +94,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
 libraries = {
 &"": SubResource("AnimationLibrary_4drgg")
 }
+
+[node name="FogHorn" parent="." instance=ExtResource("3_4drgg")]

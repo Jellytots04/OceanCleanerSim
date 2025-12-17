@@ -3,6 +3,7 @@ extends Node3D
 var spawn_pos
 @onready var yachtMesh = $Yacht
 @onready var animation = $AnimationPlayer
+@onready var horn = $FogHorn
 
 func _ready() -> void:
 	spawn_yacht()
