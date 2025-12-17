@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcvq5s2yhhkp2"]
+
+[ext_resource type="AudioStream" uid="uid://n3ien7y4yjcb" path="res://Assets/Audio/fog-horn-1-183967.mp3" id="1_yxo5q"]
+
+[node name="FogHorn" type="AudioStreamPlayer"]
+stream = ExtResource("1_yxo5q")
