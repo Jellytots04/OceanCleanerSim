@@ -27,6 +27,7 @@ func updateMultiplierValue():
 
 # Reset the multiplier in when run out
 func _on_timer_timeout() -> void:
+	timer.wait_time = 15.0
 	multiplierReset()
 
 func multiplierReset():
@@ -35,3 +36,6 @@ func multiplierReset():
 
 func start_timer():
 	timer.start()
+	timer.wait_time /= 1.05
+	multiplierBar.max_value = timer.wait_time
+	print(timer.wait_time)
